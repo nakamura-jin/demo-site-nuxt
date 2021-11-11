@@ -29,7 +29,7 @@
     </v-navigation-drawer>
 
     <v-app-bar app color="error">
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" ></v-app-bar-nav-icon>
 
       <v-toolbar-title>Application</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -67,6 +67,7 @@
   export default {
     data: () => ({
       drawer: null,
+      base: false,
       selected: 1,
     }),
     methods: {
@@ -101,3 +102,4 @@
     }
   }
 </script>
+

@@ -1,7 +1,14 @@
 <template>
-  <select @change="selectQuantity" v-model="selected" class="select">
-    <option class="text-center" v-for=" quantity in allQuantity" :key="quantity.id" :value="quantity">{{ quantity }}</option>
-  </select>
+  <v-container>
+    <select v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm " @change="selectQuantity" v-model="selected" class="select">
+      <option class="text-center" v-for=" quantity in allQuantity" :key="quantity.id" :value="quantity">{{ quantity }}</option>
+    </select>
+
+
+    <select v-else @change="selectQuantity" v-model="selected" class="select">
+      <option class="text-center" v-for=" quantity in allQuantity" :key="quantity.id" :value="quantity">{{ quantity }}</option>
+    </select>
+  </v-container>
 </template>
 
 <script>
@@ -32,7 +39,8 @@ export default {
   .select {
     width: 40px;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     height: 24px;
+    padding: 0 14px;
   }
 </style>

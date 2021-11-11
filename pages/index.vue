@@ -25,6 +25,7 @@
 
 <script>
   export default {
+    layout: 'top',
     data() {
       return  {
         email: '',

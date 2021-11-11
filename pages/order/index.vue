@@ -240,7 +240,7 @@
     </div>
 
 
-    <div v-else class="mt-12">
+    <div v-if="order.length == 0" class="mt-12">
       <p class="text-center text-h6 text-md-h5 font-weight-bold">現在注文はありません</p>
     </div>
   </v-container>
@@ -295,7 +295,6 @@ export default {
 
       this.editOrderMenu = item
       this.editOrder = true
-
     },
     shopOrderDelete(item) {
       let orderDelete = confirm('本当に削除してもよろしいですか？');

@@ -35,15 +35,22 @@
           </v-col>
 
           <v-col class="pl-2">
-            <ul v-for="item in editOrder.menu_list" :key="item.id" style="list-style: none" class="d-flex pa-0">
-              <li class="py-2" style="font-size: 8px">{{ item.title }}</li>
-              <li class="d-flex py-2 ml-2"><EditOrderFoodQuantity :Food="item" @foodQuantity="foodQuantity($event, getData)" style="width: 30px; height:22px" /> 個</li>
-              <li class="py-2 ml-4" v-if="editOrder.menu_list.length > 1"><v-btn color="error" small @click="foodDelete(editOrder, item)" style="width: 30px">取消</v-btn></li>
+            <ul v-for="item in editOrder.menu_list" :key="item.id" style="list-style: none" class="pa-0">
+              <li style="font-size: 14px">{{ item.title }}</li>
+              <div class="d-flex mt-1">
+                <li class="d-flex py-2 ml-auto" style="font-size: 14px;">
+                  <EditOrderFoodQuantity :Food="item" @foodQuantity="foodQuantity($event, getData)" style="width: 40px; height:22px; font-size: 14px;" class="mr-2" /> 
+                  個
+                </li>
+                <li class="py-2 ml-4" v-if="editOrder.menu_list.length > 1">
+                  <v-btn color="error" small @click="foodDelete(editOrder, item)" style="width: 30px; height: 22px;">取消</v-btn>
+                </li>
+              </div>
             </ul>
           </v-col>
 
         </template>
-      <v-card-actions class="mt-8">
+      <v-card-actions class="mt-4">
         <v-spacer></v-spacer>
         <v-btn text @click="closeEditOrder">戻る</v-btn>
         <v-btn text @click="shopEditOrder">確定</v-btn>

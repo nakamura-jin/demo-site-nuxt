@@ -32,7 +32,7 @@ export default {
   .select {
     width: 40px;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     height: 24px;
   }
 </style>
