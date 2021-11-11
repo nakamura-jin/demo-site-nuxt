@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col class="mt-6">
+    <v-row justify="center">
+      <v-col class="mt-6" md="6">
         <h1 class="text-center mb-4">新規登録</h1>
         <validation-observer ref="obs" v-slot="ObserverProps">
           <!-- name -->
