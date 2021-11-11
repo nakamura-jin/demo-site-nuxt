@@ -36,10 +36,10 @@
 
           <v-col class="pl-2">
             <ul v-for="item in editOrder.menu_list" :key="item.id" style="list-style: none" class="pa-0">
-              <li style="font-size: 14px">{{ item.title }}</li>
+              <li style="font-size: 18px">{{ item.title }}</li>
               <div class="d-flex mt-1">
-                <li class="d-flex py-2 ml-auto" style="font-size: 14px;">
-                  <EditOrderFoodQuantity :Food="item" @foodQuantity="foodQuantity($event, getData)" style="width: 40px; height:22px; font-size: 14px;" class="mr-2" /> 
+                <li class="d-flex py-2 ml-auto" style="font-size: 16px;">
+                  <EditOrderFoodQuantity :Food="item" @foodQuantity="foodQuantity($event, getData)" style="width: 40px; height:22px; font-size: 14px;" class="mr-2" />
                   個
                 </li>
                 <li class="py-2 ml-4" v-if="editOrder.menu_list.length > 1">

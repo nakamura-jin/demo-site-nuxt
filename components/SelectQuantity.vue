@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="pa-0" style="display: inline">
     <select v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm " @change="selectQuantity" v-model="selected" class="select">
       <option class="text-center" v-for=" quantity in allQuantity" :key="quantity.id" :value="quantity">{{ quantity }}</option>
     </select>

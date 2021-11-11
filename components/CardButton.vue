@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn v-if="addedCart" color="primary" disabled><v-icon small>mdi-cart</v-icon>追加済み</v-btn>
+    <v-btn v-if="addedCart" color="primary" disabled class="ma-0"><v-icon small>mdi-cart</v-icon>追加済み</v-btn>
     <v-btn v-else color="error" @click="addToCart"><v-icon small>mdi-cart</v-icon>カートに追加</v-btn>
   </div>
 </template>

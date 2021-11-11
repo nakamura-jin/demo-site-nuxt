@@ -36,11 +36,12 @@
 
       <v-row v-if="!$vuetify.breakpoint.xs && !$vuetify.breakpoint.sm">
         <v-tabs show-arrows fixed-tabs color="black">
-          <v-tab class="text-subtitle-1 font-weight-bold error" @click="selectMenu(0)">全ての料理</v-tab>
-          <v-tab class="text-subtitle-1 font-weight-bold error" @click="selectMenu(1)">肉料理</v-tab>
-          <v-tab class="text-subtitle-1 font-weight-bold error" @click="selectMenu(2)">揚げ物</v-tab>
-          <v-tab class="text-subtitle-1 font-weight-bold error" @click="selectMenu(3)">野菜料理</v-tab>
-          <v-tab class="text-subtitle-1 font-weight-bold error" @click="selectMenu(4)">ごはんもの</v-tab>
+          <v-tab class="text-subtitle-2 font-weight-bold error" @click="selectMenu(0)">全ての料理</v-tab>
+          <v-tab class="text-subtitle-2 font-weight-bold error" @click="selectMenu(1)">肉料理</v-tab>
+          <v-tab class="text-subtitle-2 font-weight-bold error" @click="selectMenu(2)">揚げ物</v-tab>
+          <v-tab class="text-subtitle-2 font-weight-bold error" @click="selectMenu(3)">野菜料理</v-tab>
+          <v-tab class="text-subtitle-2 font-weight-bold error" @click="selectMenu(4)">定番おつまみ</v-tab>
+          <v-tab class="text-subtitle-2 font-weight-bold error" @click="selectMenu(5)">ごはんもの</v-tab>
         </v-tabs>
       </v-row>
       <v-spacer></v-spacer>

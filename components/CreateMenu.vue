@@ -62,55 +62,131 @@
               </v-textarea>
             </validation-provider>
 
-            <!-- タグ -->
-            <validation-provider
-              rules="required"
-              name="タグ"
-              v-slot="ProviderProps"
-            >
-            <v-col class="pl-0 pt-md-6">
-              <v-icon>mdi-tag-outline</v-icon>
-              <span>タグ</span>
+            <!-- タグ スマホ-->
+            <v-col v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm">
+              <validation-provider
+                rules="required"
+                name="タグ"
+                v-slot="ProviderProps"
+              >
+              <v-col class="pl-0 pt-md-6">
+                <v-icon>mdi-tag-outline</v-icon>
+                <span>タグ</span>
+              </v-col>
+              <v-col class="pa-0 mb-xs-5 mb-6">
+                <v-col class="d-flex pa-0">
+                  <v-checkbox
+                    label="肉料理"
+                    v-model="tag_id"
+                    class="mt-0"
+                    value="1"
+                    color="error"
+                    hide-details="false"
+                  ></v-checkbox>
+
+                  <v-checkbox
+                    label="揚げ物"
+                    v-model="tag_id"
+                    class="mt-0 ml-6"
+                    value="2"
+                    color="error"
+                    hide-details="false"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-col class="d-flex pa-0 pt-2">
+                  <v-checkbox
+                    label="野菜料理"
+                    v-model="tag_id"
+                    class="mt-0"
+                    value="3"
+                    color="error"
+                    hide-details="false"
+                  ></v-checkbox>
+
+                  <v-checkbox
+                    label="定番おつまみ"
+                    v-model="tag_id"
+                    class="mt-0 ml-6"
+                    value="4"
+                    color="error"
+                    hide-details="false"
+                  ></v-checkbox>
+                </v-col>
+
+                <v-checkbox
+                  label="ごはんもの"
+                  v-model="tag_id"
+                  class="mt-0 pt-2"
+                  value="5"
+                  color="error"
+                  hide-details="false"
+                ></v-checkbox>
+              </v-col>
+              <p class="text-caption mb-2 ml-8 error" >{{ ProviderProps.errors[0] }}</p>
+              </validation-provider>
             </v-col>
-            <v-col class="d-flex pa-0 flex-wrap mb-xs-5 mb-6">
-              <v-checkbox
-                label="肉料理"
-                v-model="tag_id"
-                class="mt-0"
-                value="1"
-                color="error"
-                hide-details="false"
-              ></v-checkbox>
 
-              <v-checkbox
-                label="揚げ物"
-                v-model="tag_id"
-                class="mt-0 ml-6"
-                value="2"
-                color="error"
-                hide-details="false"
-              ></v-checkbox>
+            <!-- タグ スマホ以外-->
+            <v-col v-else>
+              <validation-provider
+                rules="required"
+                name="タグ"
+                v-slot="ProviderProps"
+              >
+              <v-col class="pl-0 pt-md-6">
+                <v-icon>mdi-tag-outline</v-icon>
+                <span>タグ</span>
+              </v-col>
+              <v-col class="d-flex pa-0 flex-wrap mb-xs-5 mb-6 ml-8">
+                <v-checkbox
+                  label="肉料理"
+                  v-model="tag_id"
+                  class="mt-0"
+                  value="1"
+                  color="error"
+                  hide-details="false"
+                ></v-checkbox>
 
-              <v-checkbox
-                label="野菜料理"
-                v-model="tag_id"
-                class="mt-0 ml-md-6"
-                value="3"
-                color="error"
-                hide-details="false"
-              ></v-checkbox>
+                <v-checkbox
+                  label="揚げ物"
+                  v-model="tag_id"
+                  class="mt-0 ml-6"
+                  value="2"
+                  color="error"
+                  hide-details="false"
+                ></v-checkbox>
 
-              <v-checkbox
-                label="ごはんもの"
-                v-model="tag_id"
-                class="mt-0 ml-6"
-                value="4"
-                color="error"
-                hide-details="false"
-              ></v-checkbox>
+                <v-checkbox
+                  label="野菜料理"
+                  v-model="tag_id"
+                  class="mt-0 ml-md-6"
+                  value="3"
+                  color="error"
+                  hide-details="false"
+                ></v-checkbox>
+
+                <v-checkbox
+                  label="定番おつまみ"
+                  v-model="tag_id"
+                  class="mt-0 ml-6"
+                  value="4"
+                  color="error"
+                  hide-details="false"
+                ></v-checkbox>
+
+                <v-checkbox
+                  label="ごはんもの"
+                  v-model="tag_id"
+                  class="mt-0 pt-4"
+                  value="5"
+                  color="error"
+                  hide-details="false"
+                ></v-checkbox>
+              </v-col>
+              <p class="text-caption mb-2 ml-8 error" >{{ ProviderProps.errors[0] }}</p>
+              </validation-provider>
             </v-col>
-            <p class="text-caption mb-2 ml-8 error" >{{ ProviderProps.errors[0] }}</p>
-            </validation-provider>
 
             <!-- 金額 -->
             <validation-provider
@@ -188,7 +264,7 @@
       </v-card>
       <v-col class="text-right">
         <v-btn color="error" @click="dialog = false">閉じる</v-btn>
-        <v-btn color="primary" @click="registerMenu" class="ml-6">登録</v-btn>
+        <v-btn color="primary" @click="registerMenu, loader = 'loading'" class="ml-6" :loading="loading" :disabled="loading">登録</v-btn>
       </v-col>
       </v-dialog>
     </template>
@@ -201,6 +277,8 @@ export default {
   data() {
     return {
       dialog: false,
+      loader: null,
+      loading: false,
       file: '',
       title: '',
       discription: '',
@@ -250,6 +328,7 @@ export default {
 
         await this.$axios.$post('/api/menu', data)
         this.$router.push('/admin/menu/completed_menu')
+        console.log('Aaa')
       } catch(error) {
         console.log(error)
       }
@@ -263,7 +342,17 @@ export default {
       this.image = []
       this.$refs.observer.reset()
     }
-  }
+  },
+  watch: {
+    loader () {
+      const l = this.loader
+      this[l] = !this[l]
+
+      setTimeout(() => (this[l] = false), 3000)
+
+      this.loader = null
+    },
+  },
 }
 </script>
 

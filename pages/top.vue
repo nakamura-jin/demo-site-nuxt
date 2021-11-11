@@ -28,7 +28,7 @@
               </template>
             </v-img>
           </v-col>
-          <v-card-title class="pt-0 pb-1 text-subtitle-1 font-weight-black">{{ item.title }}</v-card-title>
+          <v-card-title class="py-2 text-h6 font-weight-black">{{ item.title }}</v-card-title>
           <v-col class="pa-0">
             <v-card-text class="short pt-0" style="height:60px">{{ item.discription }}</v-card-text>
           </v-col>
@@ -38,20 +38,20 @@
             <!-- <v-chip class="px-4 text-subtitle-h6" label color="warning" style="color: black">¥ {{ item.price }} </v-chip> -->
             <p class="text-h6 mb-0">¥ {{ item.price }}</p>
           </v-col>
-          <v-col class="ml-auto d-flex pt-0">
-            <v-col class="pa-0 d-flex pt-1">
-              <div class="pt-2">
-                <span class="mr-2">数量: </span>
-                <SelectQuantity :Item = item />
-              </div>
-                <v-spacer></v-spacer>
-                <CardButton
-                  v-if="user != false"
-                  :userId = user.id
-                  :Item = item
-                />
-                <v-btn v-else @click.stop="dialog = true" color="error"><v-icon small>mdi-cart</v-icon>カートに追加</v-btn>
-            </v-col>
+          <v-col class="d-flex pt-0 mb-4">
+            <div class="pt-2 ml-auto">
+              <span class="mr-1">数量: </span>
+              <SelectQuantity :Item = item />
+            </div>
+
+              <!-- <v-spacer></v-spacer> -->
+              <CardButton
+                v-if="user != false "
+                :userId = user.id
+                :Item = item
+                class="ml-4"
+              />
+              <v-btn v-else @click.stop="dialog = true" color="error" class="ml-4"><v-icon small>mdi-cart</v-icon>カートに追加</v-btn>
           </v-col>
         </v-card>
       </v-col>
@@ -88,6 +88,8 @@
       selectMenu(tag) {
         if(tag != 0) {
           this.$store.dispatch('selectMenu', tag)
+          // this.$store.dispatch('selectMenu', tag)
+          console.log(tag)
         } else {
           this.$store.dispatch('getMenu');
         }

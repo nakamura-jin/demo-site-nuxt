@@ -164,9 +164,10 @@ export const mutations = {
   SET_USER(state, data) {
     return state.user = data;
   },
+
   LOGOUT_USER(state) {
     return state.user = [];
-  }
+  },
 }
 
 
