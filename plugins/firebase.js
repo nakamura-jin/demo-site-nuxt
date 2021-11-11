@@ -3,6 +3,7 @@ import firebase from 'firebase'
 if (!firebase.apps.length) {
   firebase.initializeApp(
     {
+      apiKey: "AIzaSyDHg_vFcMVlD-uXNVEXe7qwEdtxAdlPn0E",
       authDomain: "fir-site-d2145.firebaseapp.com",
       projectId: "fir-site-d2145",
       storageBucket: "fir-site-d2145.appspot.com",
@@ -12,5 +13,5 @@ if (!firebase.apps.length) {
     }
   )
 }
-  
+
 export default firebase

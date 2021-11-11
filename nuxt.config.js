@@ -38,6 +38,14 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    ['@nuxtjs/laravel-echo',
+      {
+        broadcaster: 'pusher',
+        key: '9b9a2c2a774c86bec098',
+        cluster: 'ap3',
+        forceTLS: true
+      }
+    ]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -67,7 +75,16 @@ export default {
           success: colors.green.accent3
         }
       }
-    }
+    },
+    breakpoint: {
+      thresholds: {
+        xs: 340,
+        sm: 540,
+        md: 800,
+        lg: 1280,
+      },
+      scrollBarWidth: 24,
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
