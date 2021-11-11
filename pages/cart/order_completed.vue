@@ -6,7 +6,7 @@
         <v-card-text>お受け取りのご来店お待ちしております</v-card-text>
         <!-- <v-img src="https://test-izakaya.s3.ap-northeast-1.amazonaws.com/cart.png" width="140" class="mx-auto"></v-img> -->
         <v-col class="text-center mt-10 pb-10">
-          <NuxtLink to="/">トップに戻る</NuxtLink>
+          <NuxtLink to="/top">トップに戻る</NuxtLink>
         </v-col>
       </v-card>
     </v-col>

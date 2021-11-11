@@ -84,6 +84,7 @@
       logout() {
         firebase.auth().signOut()
         this.$store.commit('LOGOUT_USER')
+        this.$router.push('/top')
       }
     }
   }

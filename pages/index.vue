@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align-content="center" style="height: 100vh">
     <v-col cols="10" md="6">
-      <h1 class="text-center mb-8">ログイン</h1>
+      <h1 class="text-center">ログイン</h1>
       <v-col height="140px">
         <v-text-field
           label="email"

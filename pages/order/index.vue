@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <div v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm">
+    <div v-if="$vuetify.breakpoint.xs && order.length > 0 || $vuetify.breakpoint.sm && order.length > 0">
       <h1 class="mb-6 text-center text-h6 mx-auto">注文一覧</h1>
       <v-col class="pa-0 ma-0" v-if="alert">
         <DeleteAlert />
@@ -134,7 +134,7 @@
 
 
 
-    <div v-else>
+    <div v-if="!$vuetify.breakpoint.xs && !$vuetify.breakpoint.sm && order.length > 0">
       <h1 class="mb-6 text-center mx-auto">注文一覧</h1>
       <v-col class="pa-0 ma-0" v-if="alert">
         <DeleteAlert />
@@ -237,6 +237,11 @@
           @updateOrder="editOrder= false"
           @shopEditOrder="editOrder = false, alert = false" />
       </v-dialog>
+    </div>
+
+
+    <div v-else class="mt-12">
+      <p class="text-center text-h6 text-md-h5 font-weight-bold">現在注文はありません</p>
     </div>
   </v-container>
 
