@@ -272,7 +272,6 @@ export default {
         for (let value of updateData.entries()) {
             console.log(value);
         }
-        await this.$axios.$get('sanctum/csrf-cookie')
         await this.$axios.$post('/api/menu/' + this.id, updateData, config)
         .then(() => {
           this.$router.push('/admin/menu/updated_menu')

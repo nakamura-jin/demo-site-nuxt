@@ -163,7 +163,6 @@
     methods: {
       async register() {
         try{
-          await this.$axios.$get('sanctum/csrf-cookie')
           await this.$axios.$post('/api/register', {
             name: this.name,
             email: this.email,

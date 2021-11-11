@@ -248,7 +248,6 @@ export default {
         data.append('price', this.price);
         data.append('image', this.image);
 
-        await this.$axios.$get('sanctum/csrf-cookie')
         await this.$axios.$post('/api/menu', data)
         this.$router.push('/admin/menu/completed_menu')
       } catch(error) {
