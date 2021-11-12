@@ -13,7 +13,7 @@
 
       <div class="fade">
         <v-img v-if="show" src="https://test-izakaya.s3.ap-northeast-1.amazonaws.com/E6Zq1OVCPVPxYtF7BoV4jU5eVpJVbnOr7v2vEr5J.jpg" width="100%" height="200%"></v-img>
-        <h1 class="text-center text-md-h3">居酒屋　將　<br>〜TAKE OUT〜</h1>
+        <h1 class="text-center text-md-h3">テスト　居酒屋　<br>〜TAKE OUT〜</h1>
       </div>
       <div class="my-8 text-center">
         <h2 class="text-md-h4 text-h5">メニュー</h2>
