@@ -55,7 +55,8 @@
       selectedItem: 0,
       shops: [
         { text: 'サイト', icon: 'mdi-web', link: '/top' },
-        { text: 'メニュー', icon: 'mdi-silverware-variant' },
+        { text: '購入履歴', icon: 'mdi-note'},
+        { text: '退会', icon: 'mdi-logout' },
       ],
     }),
     computed: {

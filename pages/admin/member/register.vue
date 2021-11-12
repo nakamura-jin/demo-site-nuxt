@@ -14,7 +14,7 @@
       </v-col>
       <v-flex>
         <v-col cols="12" md="6" class="mx-auto text-center mb-md-6">
-          <h1>スタッフ登録</h1>
+          <h1 class="text-h5">スタッフ登録</h1>
         </v-col>
         <v-col cols="12" md="6" class="mx-auto">
           <validation-observer ref="obs" v-slot="ObserverProps">

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="mb-4 text-center">メニュー一覧</h1>
+    <h1 class="mb-4 text-center text-h5">メニュー一覧</h1>
     <v-col class="text-right">
       <v-btn v-if="$vuetify.breakpoint.xs || $vuetify.breakpoint.sm" small color="error" @click="createMenu">料理を追加する</v-btn>
       <v-btn v-else color="error" class="text-bold" large @click="createMenu">料理を追加する</v-btn>

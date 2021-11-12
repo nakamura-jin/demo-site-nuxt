@@ -14,7 +14,7 @@
       </v-col>
       <v-flex>
         <v-col cols="12" md="6" class="mx-auto text-center">
-          <h1 class="text-h5">スタッフ編集</h1>
+          <h1 class="text-h5">ユーザー編集</h1>
         </v-col>
         <v-col cols="12" md="6" class="mx-auto">
           <v-form class="px-3" ref="obs">
@@ -26,7 +26,7 @@
               >
                 <v-text-field
                   v-model="name"
-                  :placeholder="member.name"
+                  :placeholder="user.name"
                   dense
                   flat
                   counter="10"
@@ -45,7 +45,7 @@
               >
                 <v-text-field
                   v-model="email"
-                  :placeholder="member.email"
+                  :placeholder="user.email"
                   dense
                   flat
                   type="email"
@@ -155,7 +155,7 @@
   export default {
     data() {
       return {
-        member: [],
+        user: [],
         id: this.$route.params.id,
         name: '',
         email: '',
@@ -173,32 +173,32 @@
 
           // 名前指定
           if(this.name == '') {
-            this.name = this.member.name
+            this.name = this.user.name
           }
 
           // メールアドレス指定
           if(this.email == '') {
-            this.email = this.member.email
+            this.email = this.user.email
           }
 
           // パスワード指定
           if(this.password == '') {
-            this.password = this.member.password
+            this.password = this.user.password
           }
 
           // 権限指定
           if(this.role_id == '') {
-            this.role_id = this.member.role_id
+            this.role_id = this.user.role_id
           }
 
-          await this.$axios.$put('/api/member/' + this.id, {
+          await this.$axios.$put('/api/user/' + this.id, {
             name: this.name,
             email: this.email,
             password: this.password,
             password_confirmation: this.password_confirmation,
             role_id: this.role_id
           })
-          this.$router.push('/admin/member')
+          this.$router.push('/admin/user')
         } catch(error) {
           this.errors = error.response.data.errors
         }
@@ -212,13 +212,13 @@
         this.$refs.obs.reset()
       },
       back() {
-        this.$router.push('/admin/member')
+        this.$router.push('/admin/user')
       }
     },
     mounted() {
-      this.$axios.$get('/api/member/' + this.id)
+      this.$axios.$get('/api/user/' + this.id)
       .then(res => {
-        this.member = res.data
+        this.user = res.data
       })
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="mb-4 text-center">Staff List</h1>
+    <h1 class="mb-4 text-center text-h5">Staff List</h1>
       <v-col class="text-right">
         <v-btn color="primary" to="/admin/member/register">CREATE</v-btn>
       </v-col>

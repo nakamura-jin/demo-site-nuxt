@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col class="mt-6" md="6">
-        <h1 class="text-center mb-4">新規登録</h1>
+        <h1 class="text-center text-h5 mb-4">新規登録</h1>
         <validation-observer ref="obs" v-slot="ObserverProps">
           <!-- name -->
           <validation-provider v-slot="ProviderProps" rules="required" name="名前">

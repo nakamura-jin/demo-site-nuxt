@@ -3,16 +3,16 @@
     <template>
       <thead>
         <tr>
-          <th class="pa-1 text-left text-md-subtitle-1">
+          <th class="py-3 text-left text-md-subtitle-1">
             Name
           </th>
-          <th class="pa-1 text-left text-md-subtitle-1">
+          <th class="py-3 text-left text-md-subtitle-1">
             Email
           </th>
-          <th class="pa-1 text-center text-md-subtitle-1">
+          <th class="py-3 text-center text-md-subtitle-1">
             Role
           </th>
-          <th class="pa-1 text-center text-md-subtitle-1">
+          <th class="py-3 text-center text-md-subtitle-1">
             Edit
           </th>
         </tr>
@@ -22,10 +22,10 @@
           v-for="item in members"
           :key="item.id"
         >
-          <td class="pa-1 text-left text-caption text-md-body-1">{{ item.name|omittedText }}</td>
-          <td class="pa-1 text-left text-caption text-md-body-1">{{ item.email|omittedText_2 }}</td>
-          <td class="pa-1 text-center text-caption text-md-body-1">{{ item.role_name }}</td>
-          <td class="pa-1 text-center"><v-btn icon color="primary" @click="memberEdit(item.id)"><v-icon class="text-caption text-md-h6">mdi-pencil</v-icon></v-btn></td>
+          <td class="py-2 text-left text-caption text-md-body-1">{{ item.name|omittedText }}</td>
+          <td class="py-2 text-left text-caption text-md-body-1">{{ item.email|omittedText_2 }}</td>
+          <td class="py-2 px-1 text-center text-caption text-md-body-1">{{ item.role_name }}</td>
+          <td class="py-2 text-center"><v-btn icon color="primary" @click="memberEdit(item.id)"><v-icon class="text-caption text-md-h6">mdi-pencil</v-icon></v-btn></td>
         </tr>
       </tbody>
     </template>

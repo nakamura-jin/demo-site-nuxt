@@ -264,7 +264,7 @@
       </v-card>
       <v-col class="text-right">
         <v-btn color="error" @click="dialog = false">閉じる</v-btn>
-        <v-btn color="primary" @click="registerMenu, loader = 'loading'" class="ml-6" :loading="loading" :disabled="loading">登録</v-btn>
+        <v-btn color="primary" @click="registerMenu" class="ml-6" :loading="loading" :disabled="loading">登録</v-btn>
       </v-col>
       </v-dialog>
     </template>
@@ -327,8 +327,8 @@ export default {
         data.append('image', this.image);
 
         await this.$axios.$post('/api/menu', data)
+        this.loader = 'loading'
         this.$router.push('/admin/menu/completed_menu')
-        console.log('Aaa')
       } catch(error) {
         console.log(error)
       }

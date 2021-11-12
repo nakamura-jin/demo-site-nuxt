@@ -11,7 +11,7 @@
         戻る
         </v-btn>
     <!-- </v-col> -->
-    <h1 class="mb-4 text-center">User List</h1>
+    <h1 class="mb-4 text-center text-h5">User List</h1>
       <v-main class="pa-2">
         <UserList />
       </v-main>

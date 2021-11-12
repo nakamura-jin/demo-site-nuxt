@@ -14,7 +14,7 @@
       </v-col>
     </v-row>
     <v-col>
-      <h1 class="text-center text-h6 text-md-h4 mb-md-8">メニュー作成</h1>
+      <h1 class="text-center text-h5 mb-md-8">メニュー作成</h1>
     </v-col>
     <CreateMenu />
   </v-container>

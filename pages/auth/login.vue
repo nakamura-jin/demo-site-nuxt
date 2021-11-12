@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center" style="height:500px" align="center">
       <v-col cols="12" md="4">
-        <h1 class="text-center">ログイン</h1>
+        <h1 class="text-center text-h5">ログイン</h1>
         <validation-observer ref="obs" v-slot="ObserverProps">
           <v-form class="pa-3">
 

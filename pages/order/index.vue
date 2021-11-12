@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div v-if="$vuetify.breakpoint.xs && order.length > 0 || $vuetify.breakpoint.sm && order.length > 0">
-      <h1 class="mb-6 text-center text-h6 mx-auto">注文一覧</h1>
+      <h1 class="mb-6 text-center text-h5 mx-auto">注文一覧</h1>
       <v-col class="pa-0 ma-0" v-if="alert">
         <DeleteAlert />
       </v-col>
@@ -10,7 +10,7 @@
         <template>
           <thead>
             <tr>
-              <th class="text-center">
+              <th class="text-center pt-2 pb-1">
                 <span>調理<br>状態</span>
               </th>
               <th class="text-center">
@@ -62,7 +62,7 @@
                 {{ item.user_name }}
               </td>
 
-              <!-- 料理名 -->
+              <!-- 料理詳細 -->
               <td>
                 <v-btn icon @click="ditail = true"><v-icon>mdi-chevron-down</v-icon></v-btn>
               </td>
@@ -73,7 +73,7 @@
                 <v-simple-table>
                   <thead>
                     <tr>
-                      <th class="text-center">
+                      <th class="text-center py-3">
                         料理名
                       </th>
                       <th class="text-center">
@@ -83,18 +83,18 @@
                   </thead>
                   <tbody>
                     <td v-if="item.cooked == 0" style="color: #555">
-                        <OrderMenu :Order="item.menu_list" />
-                      </td>
-                      <td v-else>
-                        <OrderMenu :Order="item.menu_list" />
-                      </td>
+                      <OrderMenu :Order="item.menu_list" />
+                    </td>
+                    <td v-else>
+                      <OrderMenu :Order="item.menu_list" />
+                    </td>
 
-                      <td v-if="item.cooked == 0" style="color: #555" class="text-center">
-                        <OrderQuantity :Order="item.menu_list"/>
-                      </td>
-                      <td v-else class="text-center">
-                        <OrderQuantity :Order="item.menu_list"/>
-                      </td>
+                    <td v-if="item.cooked == 0" style="color: #555" class="text-center">
+                      <OrderQuantity :Order="item.menu_list"/>
+                    </td>
+                    <td v-else class="text-center">
+                      <OrderQuantity :Order="item.menu_list"/>
+                    </td>
                   </tbody>
                 </v-simple-table>
                   <v-btn class="mt-4" small color="error" @click="ditail = false">閉じる</v-btn>
@@ -109,9 +109,9 @@
               </td>
 
               <!-- 編集 -->
-              <td class="text-center"><v-btn icon color="success" style="width: 30px;" :disabled="item.cooked == 0" @click="shopOrderEdit(item)"><v-icon class="text-caption text-md-h6">mdi-file-find</v-icon></v-btn></td>
+              <td class="text-center"><v-btn icon color="success" style="width: 30px;" :disabled="item.cooked == 0" @click="shopOrderEdit(item)"><v-icon class="text-subtitle-2 text-md-h6">mdi-file-find</v-icon></v-btn></td>
               <!-- 削除 -->
-              <td class="text-center"><v-btn icon color="error" style="width: 30px;" :disabled="item.cooked == 0" @click="shopOrderDelete(item)"><v-icon class="text-caption text-md-h6">mdi-delete</v-icon></v-btn></td>
+              <td class="text-center"><v-btn icon color="error" style="width: 30px;" :disabled="item.cooked == 0" @click="shopOrderDelete(item)"><v-icon class="text-subtitle-2 text-md-h6">mdi-delete</v-icon></v-btn></td>
             </tr>
 
 
@@ -135,7 +135,7 @@
 
 
     <div v-if="!$vuetify.breakpoint.xs && !$vuetify.breakpoint.sm && order.length > 0">
-      <h1 class="mb-6 text-center mx-auto">注文一覧</h1>
+      <h1 class="mb-6 text-center text-h5 mx-auto">注文一覧</h1>
       <v-col class="pa-0 ma-0" v-if="alert">
         <DeleteAlert />
       </v-col>
@@ -144,7 +144,7 @@
         <template>
           <thead>
             <tr>
-              <th class="text-center" width="12%">
+              <th class="text-center pt-3" width="12%">
                 調理状態
               </th>
               <th class="text-center">

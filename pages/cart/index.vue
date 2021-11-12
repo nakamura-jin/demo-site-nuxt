@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1 class="text-center">カート一覧</h1>
+    <h1 class="text-center text-h5">カート一覧</h1>
     <template v-if="this.$store.state.cart.length >= 1">
       <v-row>
         <v-col class="pa-2 pa-0 px-md-8 d-sm-flex flex-wrap">

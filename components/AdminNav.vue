@@ -103,7 +103,7 @@
     </v-list-group>
 
     </v-list>
-  </v-card>
+  </v-card>  
 </template>
 
 <script>
