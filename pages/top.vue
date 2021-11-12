@@ -10,7 +10,9 @@
         <v-tab class="text-caption" @click="selectMenu(5)">ご飯もの</v-tab>
       </v-tabs>
     </v-row>
-
+    
+    <v-row>
+      <v-col>
       <div class="fade">
         <v-img v-if="show" src="https://test-izakaya.s3.ap-northeast-1.amazonaws.com/E6Zq1OVCPVPxYtF7BoV4jU5eVpJVbnOr7v2vEr5J.jpg" width="100%" height="200%"></v-img>
         <h1 class="text-center text-md-h3">テスト　居酒屋　<br>〜TAKE OUT〜</h1>
@@ -18,6 +20,10 @@
       <div class="my-8 text-center">
         <h2 class="text-md-h4 text-h5">メニュー</h2>
       </div>
+    </v-col>
+    </v-row>
+    
+      
     <v-row>
       <v-col class="pa-2 pa-0 px-md-8 d-sm-flex flex-wrap">
         <v-card v-for="item in menu" :key="item.id" class="ma-3" max-width="340px">
